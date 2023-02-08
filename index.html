@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="title">Javascript DOM</h1>
+        <div id="paragraph" class="paragraph bgColor">
+          <p id="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+            adipisci blanditiis alias corrupti, temporibus qui numquam facere
+            pariatur omnis excepturi maiores quia reiciendis itaque. Sequi
+            dolore et aspernatur quod est?
+          </p>
+        </div>
+        <div class="card-item">
+          <input
+            id="fontSize"
+            placeholder="font-size dalam pixel"
+            type="text"
+          />
+          <input id="fontColor" placeholder="font-color" type="text" />
+          <input id="bgColor" placeholder="background-color" type="text" />
+          <input
+            id="bgWidth"
+            placeholder="background-width dalam pixel"
+            type="text"
+          />
+          <button class="bgColor" onclick="ubah()" id="ubah">Ubah</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const fontSize = document.getElementById("fontSize");
+      const fontColor = document.getElementById("fontColor");
+      const bgColor = document.getElementById("bgColor");
+      const bgWidth = document.getElementById("bgWidth");
+      const button = document.getElementById("ubah");
+      const text = document.getElementById("text");
+      const paragraph = document.getElementById("paragraph");
+      function ubah() {
+        if (fontSize.value == "") {
+          //   console.log("fontsize kosong");
+        } else {
+          text.style.fontSize = `${fontSize.value}px`;
+        }
+        if (fontColor.value == "") {
+          //   console.log("fontColor kosong");
+        } else {
+          text.style.color = `${fontColor.value}`;
+        }
+        if (bgColor.value == "") {
+          //   console.log("bgColor kosong");
+        } else {
+          paragraph.style.backgroundColor = bgColor.value;
+        }
+        if (bgWidth.value == "") {
+          //   console.log("bgWidth kosong");
+        } else {
+          paragraph.style.width = bgWidth.value + "px";
+        }
+      }
+    </script>
+  </body>
+</html>
